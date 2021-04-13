@@ -1,21 +1,10 @@
-const express = require('express');
+const app = require('./src/config/express');
+const { logger } = require('./src/utils');
 
-const app = express();
-const port = 3000;
+const port = app.get('port');
 
-app.get('/', (req, res) => {
-  console.log('get');
-  return res.status(200).json({ data: 'GET' });
-});
-app.get('/hello', (req, res) => {
-  console.log('get hello');
-  return res.status(200).json({ data: 'GET hello' });
-});
-
-app.post('/', () => {
-  console.log('post');
-});
-
-app.listen(port, () => {
-  console.log(`INICIOU SERVIDOR: ${port}`);
-});
+app.listen(port, () =>
+  logger.info(
+    `Application currently running on port: ${port} for ${process.env.NODE_ENV}`
+  )
+);
