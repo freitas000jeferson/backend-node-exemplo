@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         field: 'updated_at',
       },
     },
-    { tableName: 'access_tokens' },
+    { tableName: 'access_tokens' }
   );
   AccessToken.associate = function associate(models) {
     models.AccessToken.belongsTo(models.User, {

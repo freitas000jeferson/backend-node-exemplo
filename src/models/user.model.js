@@ -11,6 +11,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         field: 'password_reset_token',
       },
+      birthDate: {
+        type: DataTypes.DATE,
+        field: 'birth_date',
+      },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        field: 'is_active',
+      },
+      isAdmin: {
+        type: DataTypes.BOOLEAN,
+        field: 'is_admin',
+      },
       createdAt: {
         type: DataTypes.DATE,
         field: 'created_at',
@@ -22,9 +34,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       tableName: 'users',
-    },
+    }
   );
-
+  User.associate = (models) => {
+    models.User.hasMany(models.Rate, {
+      as: 'rates',
+      foreignKey: 'rateId',
+      sourceKey: 'id',
+    });
+  };
   User.beforeSave(async (user, options) => {
     const password = await encryptor.hashPassword(user.password);
     if (user.changed('password')) {
@@ -33,9 +51,11 @@ module.exports = (sequelize, DataTypes) => {
     return user;
   });
 
-  User.prototype.toJSON = function() {
+  User.prototype.toJSON = function () {
     const user = { ...this.get() };
-    return Object.fromEntries(Object.entries(user).filter(([key]) => !['password'].includes(key)));
+    return Object.fromEntries(
+      Object.entries(user).filter(([key]) => !['password'].includes(key))
+    );
   };
 
   return User;

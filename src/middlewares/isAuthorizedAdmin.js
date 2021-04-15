@@ -2,7 +2,7 @@ const { StatusCodes } = require('http-status-codes');
 const { Op } = require('sequelize');
 const { jwt, catchAsync, ApplicationError } = require('../utils');
 const { messages } = require('../helpers');
-const { accessTokenRepository } = require('../repositories');
+const { accessTokenRepository, usersRepository } = require('../repositories');
 
 module.exports = catchAsync(async (req, res, next) => {
   let token;
@@ -39,6 +39,14 @@ module.exports = catchAsync(async (req, res, next) => {
     throw new ApplicationError(
       messages.notFound('token'),
       StatusCodes.NOT_FOUND
+    );
+  }
+  // verificar se o usuario é admin
+  const user = await usersRepository.getById(decoded.id);
+  if (!user.isAdmin) {
+    throw new ApplicationError(
+      messages.invalidAuthFormat,
+      StatusCodes.UNAUTHORIZED
     );
   }
 

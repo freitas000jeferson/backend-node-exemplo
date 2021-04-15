@@ -12,7 +12,8 @@ module.exports.list = async (options) => {
       total: count,
       totalPages,
       ...(options.page > 1 && { previousPage: options.page - 1 }),
-      ...(options.page < count && options.page < totalPages && { nextPage: options.page + 1 }),
+      ...(options.page < count &&
+        options.page < totalPages && { nextPage: options.page + 1 }),
     },
     data: rows,
   };

@@ -2,20 +2,14 @@ const yup = require('yup');
 
 const signin = {
   body: yup.object().shape({
-    email: yup
-      .string()
-      .email()
-      .required(),
+    email: yup.string().email().required(),
     password: yup.string().required(),
   }),
 };
 
 const forgotPassword = {
   body: yup.object().shape({
-    email: yup
-      .string()
-      .email()
-      .required(),
+    email: yup.string().email().required(),
   }),
 };
 const refreshToken = {
@@ -34,7 +28,7 @@ const resetPassword = {
       .min(8)
       .matches(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,10}$/,
-        'password must have lower and upper letters, at least one number, and at least one special character',
+        'password must have lower and upper letters, at least one number, and at least one special character'
       )
       .required(),
   }),

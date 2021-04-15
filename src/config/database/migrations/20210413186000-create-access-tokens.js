@@ -1,6 +1,6 @@
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('access_tokens', {
+  up: (queryInterface, Sequelize) =>
+    queryInterface.createTable('access_tokens', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -35,9 +35,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-    });
-  },
-  down: (queryInterface) => {
-    return queryInterface.dropTable('access_tokens');
-  },
+    }),
+  down: (queryInterface) => queryInterface.dropTable('access_tokens'),
 };
