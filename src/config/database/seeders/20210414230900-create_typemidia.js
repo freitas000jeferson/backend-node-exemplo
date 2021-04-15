@@ -2,10 +2,10 @@ module.exports = {
   up: async (queryInterface, Sequelize) =>
     queryInterface.bulkInsert('typemidias', [
       {
-        name: 'VIDEO',
+        type: 'VIDEO',
       },
       {
-        name: 'IMAGE',
+        type: 'IMAGE',
       },
     ]),
 
