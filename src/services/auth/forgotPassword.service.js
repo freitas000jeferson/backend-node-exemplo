@@ -11,7 +11,10 @@ const { resetTokenExpiresIn, clientURL } = require('../../config/env');
 module.exports.forgotPassword = async (email) => {
   const user = await usersRepository.get({ email });
   if (!user) {
-    throw new ApplicationError(messages.notFound('user'), StatusCodes.NOT_FOUND);
+    throw new ApplicationError(
+      messages.notFound('user'),
+      StatusCodes.NOT_FOUND
+    );
   }
 
   const payload = {

@@ -18,17 +18,17 @@ module.exports = (sequelize, DataTypes) => {
   Rate.associate = (models) => {
     models.Rate.belongsTo(models.Movie, {
       as: 'movies',
-      foreignKey: 'movieId',
+      foreignKey: 'movie_id',
       targetKey: 'id',
     });
     models.Rate.belongsTo(models.User, {
       as: 'users',
-      foreignKey: 'userId',
+      foreignKey: 'user_id',
       targetKey: 'id',
     });
     models.Rate.belongsTo(models.Note, {
       as: 'notes',
-      foreignKey: 'noteId',
+      foreignKey: 'note_id',
       targetKey: 'id',
     });
   };

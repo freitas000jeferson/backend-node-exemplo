@@ -33,8 +33,7 @@ const create = {
       )
       .required(),
     birthDate: yup.date().required(),
-    isActive: yup.boolean.default(() => true),
-    isAdmin: yup.boolean.default(() => false),
+    isActive: yup.boolean().default(() => true),
   }),
 };
 
@@ -45,6 +44,7 @@ const update = {
   body: yup.object().shape({
     name: yup.string(),
     email: yup.string().email(),
+    birthDate: yup.date(),
     password: yup
       .string()
       .min(8)

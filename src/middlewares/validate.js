@@ -5,7 +5,9 @@ const { messages } = require('../helpers');
 
 module.exports = (schema) => async (req, res, next) => {
   const requestObject = Object.fromEntries(
-    Object.entries(req).filter(([key]) => ['query', 'params', 'body'].includes(key)),
+    Object.entries(req).filter(([key]) =>
+      ['query', 'params', 'body'].includes(key)
+    )
   );
 
   try {
@@ -22,6 +24,14 @@ module.exports = (schema) => async (req, res, next) => {
       const [outerKey, innerKey] = error.path.split('.');
       errors[outerKey] = { [innerKey]: error.message };
     });
-    next(new ApplicationError(messages.invalidFields, StatusCodes.BAD_REQUEST, true, '', errors));
+    next(
+      new ApplicationError(
+        messages.invalidFields,
+        StatusCodes.BAD_REQUEST,
+        true,
+        '',
+        errors
+      )
+    );
   }
 };

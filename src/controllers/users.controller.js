@@ -22,6 +22,17 @@ module.exports = {
 
   create: catchAsync(async (req, res) => {
     const { body } = req;
+
+    body.isAdmin = false;
+    const response = await usersService.create(body);
+
+    return res.status(StatusCodes.CREATED).json(response);
+  }),
+
+  createAdmin: catchAsync(async (req, res) => {
+    const { body } = req;
+
+    body.isAdmin = true;
     const response = await usersService.create(body);
 
     return res.status(StatusCodes.CREATED).json(response);

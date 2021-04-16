@@ -27,7 +27,6 @@ module.exports = catchAsync(async (req, res, next) => {
     if (err) {
       throw new ApplicationError(err.message, StatusCodes.UNAUTHORIZED);
     }
-
     decoded = decodedToken;
   });
 
@@ -42,8 +41,12 @@ module.exports = catchAsync(async (req, res, next) => {
     );
   }
   // verificar se o usuario é admin
-  const user = await usersRepository.getById(decoded.id);
-  if (!user.isAdmin) {
+  const {
+    dataValues: { isAdmin },
+  } = await usersRepository.getById(decoded.sub.id);
+
+  // console.log('isAdmin:', isAdmin);
+  if (!isAdmin) {
     throw new ApplicationError(
       messages.invalidAuthFormat,
       StatusCodes.UNAUTHORIZED

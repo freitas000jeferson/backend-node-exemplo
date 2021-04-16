@@ -4,7 +4,10 @@ const { Op } = require('sequelize');
 const { jwt, ApplicationError } = require('../../utils');
 const { messages } = require('../../helpers');
 const { create } = require('../accessToken/create.service');
-const { accessTokenRepository, usersRepository } = require('../../repositories');
+const {
+  accessTokenRepository,
+  usersRepository,
+} = require('../../repositories');
 
 module.exports = {
   refreshToken: async (token, refreshToken) => {
@@ -28,7 +31,10 @@ module.exports = {
     });
 
     if (!accessToken) {
-      throw new ApplicationError(messages.notFound('token'), httpCodes.NOT_FOUND);
+      throw new ApplicationError(
+        messages.notFound('token'),
+        httpCodes.NOT_FOUND
+      );
     }
 
     accessToken.expired = true;

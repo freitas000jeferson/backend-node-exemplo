@@ -2,19 +2,19 @@ module.exports = {
   up: async (queryInterface, Sequelize) =>
     queryInterface.bulkInsert('notes', [
       {
-        name: 0,
+        note: 0,
       },
       {
-        name: 1,
+        note: 1,
       },
       {
-        name: 2,
+        note: 2,
       },
       {
-        name: 3,
+        note: 3,
       },
       {
-        name: 4,
+        note: 4,
       },
     ]),
 

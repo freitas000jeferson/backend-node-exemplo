@@ -8,14 +8,23 @@ const userService = require('../users/update.service');
 module.exports.resetPassword = async (token, newPassword) => {
   const user = await usersRepository.get({ passwordResetToken: token });
   if (!user) {
-    throw new ApplicationError(messages.notFound('users'), StatusCodes.NOT_FOUND);
+    throw new ApplicationError(
+      messages.notFound('users'),
+      StatusCodes.NOT_FOUND
+    );
   }
 
   jwt.verify(token, (err) => {
     if (err) {
-      throw new ApplicationError(messages.expiredToken, StatusCodes.UNAUTHORIZED);
+      throw new ApplicationError(
+        messages.expiredToken,
+        StatusCodes.UNAUTHORIZED
+      );
     }
   });
 
-  await userService.update(user.id, { password: newPassword, passwordResetToken: null });
+  await userService.update(user.id, {
+    password: newPassword,
+    passwordResetToken: null,
+  });
 };

@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Note = sequelize.define(
-    'Notes',
+    'Note',
     {
-      name: DataTypes.INTEGER,
+      note: DataTypes.INTEGER,
     },
     { tableName: 'notes' }
   );

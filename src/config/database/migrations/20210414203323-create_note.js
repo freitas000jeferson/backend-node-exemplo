@@ -7,7 +7,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: { allowNull: false, type: Sequelize.INTEGER },
+      note: { allowNull: false, type: Sequelize.INTEGER },
     });
   },
   down: async (queryInterface, Sequelize) => {
