@@ -38,6 +38,26 @@ module.exports = {
     return res.status(StatusCodes.CREATED).json(response);
   }),
 
+  disableUser: catchAsync(async (req, res) => {
+    const {
+      params: { id },
+    } = req;
+    const response = await usersService.update(id, {
+      isActive: false,
+    });
+    return res.status(StatusCodes.OK).json(response);
+  }),
+
+  enableUser: catchAsync(async (req, res) => {
+    const {
+      params: { id },
+    } = req;
+    const response = await usersService.update(id, {
+      isActive: true,
+    });
+    return res.status(StatusCodes.OK).json(response);
+  }),
+
   update: catchAsync(async (req, res) => {
     const {
       params: { id },

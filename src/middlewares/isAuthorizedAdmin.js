@@ -42,11 +42,17 @@ module.exports = catchAsync(async (req, res, next) => {
   }
   // verificar se o usuario é admin
   const {
-    dataValues: { isAdmin },
+    dataValues: { isAdmin, isActive },
   } = await usersRepository.getById(decoded.sub.id);
 
   // console.log('isAdmin:', isAdmin);
   if (!isAdmin) {
+    throw new ApplicationError(
+      messages.invalidAuthFormat,
+      StatusCodes.UNAUTHORIZED
+    );
+  }
+  if (!isActive) {
     throw new ApplicationError(
       messages.invalidAuthFormat,
       StatusCodes.UNAUTHORIZED

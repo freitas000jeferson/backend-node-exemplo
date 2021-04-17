@@ -1,14 +1,17 @@
 const { StatusCodes } = require('http-status-codes');
 
-const { usersRepository } = require('../../repositories');
+const { writerRepository } = require('../../repositories');
 const { ApplicationError } = require('../../utils');
 const { messages } = require('../../helpers');
 
 module.exports.get = async (id) => {
-  const user = await usersRepository.getById(id);
-  if (!user) {
-    throw new ApplicationError(messages.notFound('users'), StatusCodes.NOT_FOUND);
+  const writer = await writerRepository.getById(id);
+  if (!writer) {
+    throw new ApplicationError(
+      messages.notFound('writers'),
+      StatusCodes.NOT_FOUND
+    );
   }
 
-  return user;
+  return writer;
 };

@@ -1,19 +1,19 @@
 const { StatusCodes } = require('http-status-codes');
 
-const { usersRepository } = require('../../repositories');
+const { writerRepository } = require('../../repositories');
 const { ApplicationError } = require('../../utils');
 const { messages } = require('../../helpers');
 
 module.exports.update = async (id, body) => {
-  const user = await usersRepository.getById(id);
-  if (!user) {
+  const writer = await writerRepository.getById(id);
+  if (!writer) {
     throw new ApplicationError(
-      messages.notFound('users'),
+      messages.notFound('writers'),
       StatusCodes.NOT_FOUND
     );
   }
 
-  Object.assign(user, body);
+  Object.assign(writer, body);
 
-  return usersRepository.update(user);
+  return writerRepository.update(writer);
 };

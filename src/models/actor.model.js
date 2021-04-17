@@ -3,6 +3,14 @@ module.exports = (sequelize, DataTypes) => {
     'Actor',
     {
       name: DataTypes.STRING,
+      createdAt: {
+        type: DataTypes.DATE,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        field: 'updated_at',
+      },
     },
     { tableName: 'actors' }
   );

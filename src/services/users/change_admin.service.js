@@ -13,7 +13,7 @@ module.exports.changeAdmin = async (id) => {
     );
   }
 
-  Object.assign(user, { isAdmin: true });
+  Object.assign(user, { isAdmin: !user.isAdmin });
 
   return usersRepository.update(user);
 };

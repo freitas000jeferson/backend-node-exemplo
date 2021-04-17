@@ -3,7 +3,6 @@ module.exports = (sequelize, DataTypes) => {
     'Midia',
     {
       url: DataTypes.STRING,
-
       movieId: {
         type: DataTypes.INTEGER,
         field: 'movie_id',
@@ -11,6 +10,14 @@ module.exports = (sequelize, DataTypes) => {
       typemidiaId: {
         type: DataTypes.INTEGER,
         field: 'typemidia_id',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        field: 'updated_at',
       },
     },
     { tableName: 'midias' }

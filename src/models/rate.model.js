@@ -11,6 +11,14 @@ module.exports = (sequelize, DataTypes) => {
       movieId: { type: DataTypes.INTEGER, field: 'movie_id' },
       noteId: { type: DataTypes.INTEGER, field: 'note_id' },
       userId: { type: DataTypes.INTEGER, field: 'user_id' },
+      createdAt: {
+        type: DataTypes.DATE,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        field: 'updated_at',
+      },
     },
     { tableName: 'rates' }
   );

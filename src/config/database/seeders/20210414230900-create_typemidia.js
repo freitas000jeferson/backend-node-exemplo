@@ -3,9 +3,13 @@ module.exports = {
     queryInterface.bulkInsert('typemidias', [
       {
         type: 'VIDEO',
+        created_at: new Date(),
+        updated_at: new Date(),
       },
       {
         type: 'IMAGE',
+        created_at: new Date(),
+        updated_at: new Date(),
       },
     ]),
 

@@ -6,6 +6,7 @@ const { type } = require('./type.validation');
 const { note } = require('./note.validation');
 const { movies } = require('./movies.validation');
 const { rates } = require('./rates.validation');
+const { midia } = require('./midia.validation');
 
 module.exports.validationSchemas = {
   users,
@@ -15,5 +16,6 @@ module.exports.validationSchemas = {
   type,
   note,
   movies,
+  midia,
   rates,
 };
