@@ -1,9 +1,9 @@
 const { noteRepository } = require('../../repositories');
-const { queryHelper } = require('../../helpers');
+const { queryHelper, queryNotes } = require('../../helpers');
 
 module.exports.list = async (options) => {
   const query = queryHelper(options);
-
+  query.where = queryNotes(options);
   const { count, rows } = await noteRepository.list(query);
   const totalPages = Math.ceil(count / options.perPage);
 

@@ -8,6 +8,7 @@ const create = {
 
 const list = {
   query: yup.object().shape({
+    name: yup.string().default(''),
     page: yup.number().integer().default(1),
     perPage: yup.number().integer().default(10),
     sortBy: yup

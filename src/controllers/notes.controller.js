@@ -4,8 +4,14 @@ const { notesService } = require('../services');
 
 module.exports = {
   list: catchAsync(async (req, res) => {
-    const { page, perPage, sortBy } = req.query;
-    const response = await notesService.list({ page, perPage, sortBy });
+    const { page, perPage, sortBy, note, op } = req.query;
+    const response = await notesService.list({
+      page,
+      perPage,
+      sortBy,
+      note,
+      op,
+    });
 
     if (!response || response.data.length === 0) {
       return res.status(StatusCodes.NO_CONTENT).end();

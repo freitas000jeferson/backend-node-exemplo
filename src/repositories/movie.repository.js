@@ -1,3 +1,4 @@
+// const { Op } = require('sequelize');
 const {
   Movie,
   Actor,
@@ -56,9 +57,6 @@ module.exports = {
               attributes: ['type'],
             },
           ],
-          // through: {
-          //   attributes: ['type'],
-          // },
         },
       ],
     }),

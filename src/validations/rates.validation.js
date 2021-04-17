@@ -13,6 +13,13 @@ const create = {
 
 const list = {
   query: yup.object().shape({
+    title: yup.string().default(''),
+    description: yup.string().default(''),
+    isSpoiler: yup.boolean().default(undefined),
+    movieId: yup.number().default(undefined),
+    noteId: yup.number().default(undefined),
+    userId: yup.number().default(undefined),
+
     page: yup.number().integer().default(1),
     perPage: yup.number().integer().default(10),
     sortBy: yup

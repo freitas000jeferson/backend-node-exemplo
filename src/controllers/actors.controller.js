@@ -4,8 +4,8 @@ const { actorsService } = require('../services');
 
 module.exports = {
   list: catchAsync(async (req, res) => {
-    const { page, perPage, sortBy } = req.query;
-    const response = await actorsService.list({ page, perPage, sortBy });
+    const { page, perPage, sortBy, name } = req.query;
+    const response = await actorsService.list({ page, perPage, sortBy, name });
 
     if (!response || response.data.length === 0) {
       return res.status(StatusCodes.NO_CONTENT).end();
