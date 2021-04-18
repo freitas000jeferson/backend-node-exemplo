@@ -1,17 +1,17 @@
 const { StatusCodes } = require('http-status-codes');
 
-const { usersRepository } = require('../../repositories');
+const { writerMoviesRepository } = require('../../repositories');
 const { ApplicationError } = require('../../utils');
 const { messages } = require('../../helpers');
 
 module.exports.get = async (id) => {
-  const user = await usersRepository.getById(id);
-  if (!user) {
+  const writerMovies = await writerMoviesRepository.getById(id);
+  if (!writerMovies) {
     throw new ApplicationError(
-      messages.notFound('users'),
+      messages.notFound('writerMovies'),
       StatusCodes.NOT_FOUND
     );
   }
 
-  return user;
+  return writerMovies;
 };

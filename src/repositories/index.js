@@ -9,6 +9,11 @@ const rateRepository = require('./rate.repository');
 const typemidiaRepository = require('./typemidia.repository');
 const writerRepository = require('./writer.repository');
 const movieRepository = require('./movie.repository');
+const actorMoviesRepository = require('./actor_movies.repository');
+const categoryMoviesRepository = require('./category_movies.repository');
+const directorMoviesRepository = require('./director_movies.repository');
+const writerMoviesRepository = require('./writer_movies.repository');
+const teste = require('./teste.repository');
 
 module.exports = {
   usersRepository,
@@ -22,4 +27,9 @@ module.exports = {
   typemidiaRepository,
   writerRepository,
   movieRepository,
+  actorMoviesRepository,
+  categoryMoviesRepository,
+  directorMoviesRepository,
+  writerMoviesRepository,
+  teste,
 };

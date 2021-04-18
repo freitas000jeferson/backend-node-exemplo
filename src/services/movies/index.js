@@ -4,7 +4,8 @@ const { get } = require('./get.service');
 const { update } = require('./update.service');
 const { destroy } = require('./destroy.service');
 const { enable } = require('./enable.service');
-const { desable } = require('./desable.service');
+const { disable } = require('./disable.service');
+const { listQuery } = require('./listQuery.service');
 
 module.exports = {
   list,
@@ -13,5 +14,6 @@ module.exports = {
   update,
   destroy,
   enable,
-  desable,
+  disable,
+  listQuery,
 };

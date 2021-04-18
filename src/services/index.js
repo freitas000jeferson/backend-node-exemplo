@@ -11,6 +11,11 @@ const ratesService = require('./rates');
 const typemidiasService = require('./typemidias');
 const writersService = require('./writers');
 
+const writerMovieService = require('./writer_movie');
+const actorMovieService = require('./actor_movie');
+const directorMovieService = require('./director_movie');
+const categoryMovieService = require('./category_movie');
+
 module.exports = {
   usersService,
   authService,
@@ -24,4 +29,8 @@ module.exports = {
   ratesService,
   typemidiasService,
   writersService,
+  writerMovieService,
+  actorMovieService,
+  directorMovieService,
+  categoryMovieService,
 };

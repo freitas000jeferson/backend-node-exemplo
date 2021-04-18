@@ -19,7 +19,6 @@ const list = {
     movieId: yup.number().default(undefined),
     noteId: yup.number().default(undefined),
     userId: yup.number().default(undefined),
-
     page: yup.number().integer().default(1),
     perPage: yup.number().integer().default(10),
     sortBy: yup
@@ -46,6 +45,7 @@ const update = {
     title: yup.string().required(),
     description: yup.string().required(),
     isSpoiler: yup.boolean().required(),
+    noteId: yup.number().required(),
   }),
 };
 

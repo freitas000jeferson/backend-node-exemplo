@@ -2,13 +2,21 @@ module.exports = (sequelize, DataTypes) => {
   const WriterMovie = sequelize.define(
     'WriterMovie',
     {
-      WriterId: {
+      writerId: {
         type: DataTypes.INTEGER,
         field: 'writer_id',
       },
       movieId: {
         type: DataTypes.INTEGER,
         field: 'movie_id',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        field: 'updated_at',
       },
     },
     {

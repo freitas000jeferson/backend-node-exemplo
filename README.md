@@ -1,5 +1,5 @@
-# backend-node-exemplo
+# backend-node
 
-npx sequelize db:migrate
-npx sequelize db:seed:all
-npx sequelize migration:create --name=nome_da_migracao
+### Projeto Filmes
+
+### Jeferson Gonçalves de Freitas

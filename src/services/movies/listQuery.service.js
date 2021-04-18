@@ -1,10 +1,11 @@
 const { movieRepository } = require('../../repositories');
-const { queryHelper, queryMovies } = require('../../helpers');
+const { pagination, queryList } = require('../../helpers');
 
-module.exports.list = async (options) => {
-  const query = queryHelper(options);
-  query.where = queryMovies(options);
-  const { count, rows } = await movieRepository.list(query);
+module.exports.listQuery = async (options) => {
+  const query = pagination(options);
+  query.where = queryList(options);
+
+  const { count, rows } = await movieRepository.listQuery(query);
 
   const totalPages = Math.ceil(count / options.perPage);
 

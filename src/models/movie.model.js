@@ -52,12 +52,12 @@ module.exports = (sequelize, DataTypes) => {
     });
     models.Movie.hasMany(models.Midia, {
       as: 'midias',
-      foreignKey: 'movieId',
+      foreignKey: 'movie_id',
       sourceKey: 'id',
     });
     models.Movie.hasMany(models.Rate, {
       as: 'rates',
-      foreignKey: 'movieId',
+      foreignKey: 'movie_id',
       sourceKey: 'id',
     });
   };

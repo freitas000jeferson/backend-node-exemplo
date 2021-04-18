@@ -2,13 +2,21 @@ module.exports = (sequelize, DataTypes) => {
   const CategoryMovie = sequelize.define(
     'CategoryMovie',
     {
-      CategoryId: {
+      categoryId: {
         type: DataTypes.INTEGER,
         field: 'category_id',
       },
       movieId: {
         type: DataTypes.INTEGER,
         field: 'movie_id',
+      },
+      createdAt: {
+        type: DataTypes.DATE,
+        field: 'created_at',
+      },
+      updatedAt: {
+        type: DataTypes.DATE,
+        field: 'updated_at',
       },
     },
     {

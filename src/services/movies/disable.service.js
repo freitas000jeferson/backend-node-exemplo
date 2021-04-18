@@ -4,7 +4,7 @@ const { movieRepository } = require('../../repositories');
 const { ApplicationError } = require('../../utils');
 const { messages } = require('../../helpers');
 
-module.exports.desable = async (id) => {
+module.exports.disable = async (id) => {
   const movie = await movieRepository.getById(id);
   if (!movie) {
     throw new ApplicationError(
