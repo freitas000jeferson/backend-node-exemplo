@@ -10,6 +10,18 @@
 #### [endpoints no postman](https://www.getpostman.com/collections/bef02cefa5692f67d6b2)
     - https://www.getpostman.com/collections/bef02cefa5692f67d6b2
 
+### Utilizado
+   - javascript
+   - node js 
+   - sequelize
+   - express
+   - ESlint e Prettier
+   - Testes com jest (*ainda incompleto*)
+   - Docker (crie com [ex]: docker create --name postgres-1 -e POSTGRES_PASSWORD=admin123 -p 5432:5432 postgres)
+   - api do MailTrap.io para uns testes rs
+
+### Breve Descrição
+
 ##### Admin
   - Cadastro
   - token
@@ -47,6 +59,12 @@
   - alterar (so altera *title, description, isSpoiler, nota*)
 
 
+### Algumas regras de negocios
+  - o admin pode desabilitar um usuario(depende do motivo, vai q ele seja chato...)
+  - o usuario so desabilita a si msm
+  - no cadastro do filme coloca os ids dos atores, escritores, diretores, categorias, apos isso so sera adicionado e removido unitariamente
+  - nos filmes ta levando a media das notas
+  
 
 
 
