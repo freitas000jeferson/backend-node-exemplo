@@ -62,8 +62,12 @@
 ### Algumas regras de negocios
   - o admin pode desabilitar um usuario(depende do motivo, vai q ele seja chato...)
   - o usuario so desabilita a si msm
+  - so o admin pode desabilitar um filme, assim como cadastra-lo e altera-lo
   - no cadastro do filme coloca os ids dos atores, escritores, diretores, categorias, apos isso so sera adicionado e removido unitariamente
-  - nos filmes ta levando a media das notas
+  - nos filmes ta levando a media das notas e outros dados como atores, categorias ...
+  - alguns get by id e find all estão livres de token(menos os _get users_), pra facilitar quem entra e achar algo sem precisar se cadastrar
+  - pra inserir uma nota será necessário um cadastro, e nao pode votar 2 vezes no msm filme(pode so alterar a nota)
+  - [obs: Deu uns erros como: _SequelizeDatabaseError: missing FROM-clause entry for table "Category"_, que não soube como resolver (não teve stackoverflow a ajudasse 😢), queria uma ajuda dps rsrs]
   
 
 
