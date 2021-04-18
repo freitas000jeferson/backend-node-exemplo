@@ -7,7 +7,7 @@
 #### Tabelas de Relacionamentos
 ![img](https://github.com/freitas000jeferson/backend-node-exemplo/blob/main/Banco%20de%20filmes.png)
 
-#### [endpoints no postman](https://www.getpostman.com/collections/bef02cefa5692f67d6b2)
+#### [endpoints no postman](https://www.getpostman.com/collections/bef02cefa5692f67d6b2) 📃
     - https://www.getpostman.com/collections/bef02cefa5692f67d6b2
 
 ### Utilizado
@@ -16,9 +16,9 @@
    - sequelize
    - express
    - ESlint e Prettier
-   - Testes com jest (*ainda incompleto*)
+   - Testes com jest (*ainda incompleto*) 😞
    - Docker (crie com [ex]: docker create --name postgres-1 -e POSTGRES_PASSWORD=admin123 -p 5432:5432 postgres)
-   - api do MailTrap.io para uns testes rs
+   - api do MailTrap.io para uns testes rsrs
 
 ### Breve Descrição
 
@@ -42,7 +42,7 @@
   - find all(paginado e traz todos os filmes relacionados)
 
 ##### Filmes
-  - listagem (paginado e com filtro por *titulo, endDate, beginDate, sinopse, classificação etária, duração, filmes ativos*)
+  - listagem (paginado e com filtro por *titulo, beginDate e endDate pelo lançamento, sinopse, classificação etária, duração, filmes ativos*)
   - update(adição e remoção de *ator, diretor, escritor, categoria*)
   - habilitar e desablilitar filme
   - create
