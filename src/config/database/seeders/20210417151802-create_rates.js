@@ -4,7 +4,7 @@ module.exports = {
       {
         title: 'Uma merd*...',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 1,
         note_id: 1,
         user_id: 1,
@@ -14,7 +14,7 @@ module.exports = {
       {
         title: 'ok...',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 2,
         note_id: 3,
         user_id: 1,
@@ -24,7 +24,7 @@ module.exports = {
       {
         title: 'titulo...',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 4,
         note_id: 3,
         user_id: 2,
@@ -34,7 +34,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso...',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 1,
         note_id: 4,
         user_id: 3,
@@ -44,7 +44,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso......',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 1,
         note_id: 5,
         user_id: 4,
@@ -54,7 +54,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso......',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 3,
         note_id: 5,
         user_id: 4,
@@ -64,7 +64,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso......',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 5,
         note_id: 2,
         user_id: 4,
@@ -74,7 +74,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso......',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 2,
         note_id: 5,
         user_id: 4,
@@ -84,7 +84,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso......',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 1,
         note_id: 5,
         user_id: 2,
@@ -94,7 +94,7 @@ module.exports = {
       {
         title: 'titulo preguiçoso......',
         description: 'tem uma pessima sinopse',
-        isSpoiler: false,
+        is_spoiler: false,
         movie_id: 5,
         note_id: 2,
         user_id: 3,

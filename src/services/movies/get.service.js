@@ -6,6 +6,8 @@ const { messages } = require('../../helpers');
 
 module.exports.get = async (id) => {
   const movie = await movieRepository.getById(id);
+  // const movie = await movieRepository.findAll(id);
+
   if (!movie) {
     throw new ApplicationError(
       messages.notFound('movie'),

@@ -3,9 +3,11 @@ const { queryHelper } = require('../../helpers');
 
 module.exports.list = async (options) => {
   const query = queryHelper(options);
-
   const { count, rows } = await movieRepository.list(query);
   const totalPages = Math.ceil(count / options.perPage);
+
+  // const resp = await movieRepository.list2();
+  // console.log(resp);
 
   return {
     metadata: {
