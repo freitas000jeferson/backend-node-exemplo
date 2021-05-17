@@ -13,7 +13,7 @@
     "test:coverage": "jest -i && codecov",
     "pretest": "NODE_ENV=test npx sequelize db:create && NODE_ENV=test npx sequelize db:migrate",
     "posttest": "NODE_ENV=test npx sequelize db:drop",
-    "migrate": "NODE_ENV=production npx sequelize db:migrate",
+    "migrate": "npx sequelize db:migrate",
     "test-1": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jeferson Gonçalves de Freitas",
@@ -31,7 +31,7 @@
     "moment": "^2.29.1",
     "morgan": "^1.10.0",
     "nodemailer": "^6.4.16",
-    "pg": "^8.5.1",
+    "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "prettier": "^2.2.1",
     "sequelize": "^6.6.2",
