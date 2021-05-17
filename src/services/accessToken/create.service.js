@@ -3,7 +3,10 @@ const moment = require('moment');
 const { accessTokenRepository } = require('../../repositories');
 const { encryptor } = require('../../helpers');
 
-const { refreshTokenExpiresIn, accessTokenExpiresIn } = require('../../config/env');
+const {
+  refreshTokenExpiresIn,
+  accessTokenExpiresIn,
+} = require('../../config/env');
 
 module.exports = {
   create: async (payload) => {
@@ -15,7 +18,7 @@ module.exports = {
       {
         algorithm: 'HS384',
         expiresIn: accessTokenExpiresIn,
-      },
+      }
     );
 
     const refreshTokenPayload = {

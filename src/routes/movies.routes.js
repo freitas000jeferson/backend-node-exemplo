@@ -7,7 +7,8 @@ const {
 
 // TODO: usar filtro pra nome
 router.get('/', validate(movies.list), moviesController.list);
-router.get('/query', validate(movies.listQuery), moviesController.listquery);
+// deu erro esse filtro
+// router.get('/query', validate(movies.listQuery), moviesController.listquery);
 router.get('/:id', validate(movies.get), moviesController.get);
 
 router.use(isAuthorizedAdmin);
