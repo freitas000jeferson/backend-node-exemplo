@@ -16,4 +16,5 @@ module.exports = {
   // dialectOptions: {
   //   ssl: { require: true },
   // },
+  // .
 };
